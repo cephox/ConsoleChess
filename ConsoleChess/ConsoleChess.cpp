@@ -173,6 +173,10 @@ OUTER:
 			}
 
 		}
+		else
+		{
+			// Go on
+		}
 
 		if (currentPlayer[0] == 'W')
 		{

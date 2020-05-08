@@ -113,7 +113,7 @@ int move(int x, int y, int toX, int toY, const char* board[8][8])
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			for (int j = 0; j < 8; j++)
+			for (int j = 0; j < 8; j++) 
 			{
 				if (board[j][i] != "  ")
 				{
@@ -124,6 +124,10 @@ int move(int x, int y, int toX, int toY, const char* board[8][8])
 				}
 			}
 		}
+	}
+
+	if (!foundOneNoKing)
+	{
 		return 2;
 	}
 
