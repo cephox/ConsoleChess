@@ -3,23 +3,23 @@
 #include <String.h>
 
 const char* board[8][8] = {
-	{"sT", "sS", "sL", "sK", "sD", "sL", "sS", "sT"},
+	/*{"sT", "sS", "sL", "sK", "sD", "sL", "sS", "sT"},
 	{"sB", "sB", "sB", "sB", "sB", "sB", "sB", "sB"},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"wB", "wB", "wB", "wB", "wB", "wB", "wB", "wB"},
-	{"wT", "wS", "wL", "wK", "wD", "wL", "wS", "wT"}
+	{"wT", "wS", "wL", "wK", "wD", "wL", "wS", "wT"}*/
 
-	/*{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
+	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "wB", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "sK", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
 	{"  ", "  ", "wK", "  ", "  ", "  ", "  ", "  "},
-	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "}*/
+	{"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "}
 };
 
 int amountPlayerOne = 0;
@@ -171,6 +171,30 @@ OUTER:
 			while (true)
 			{
 			}
+
+		}
+		else if (moved == 3)
+		{
+			int transmutation = 0;
+
+			while (transmutation == 0)
+			{
+				printf("\nDu kannst deinen Bauern auf (%i, %i) verwandeln.\nIn was soll der Bauer verwandelt werden?\n[1] Dame\n[2] Turm\n[3] Springer\n[4] Laeufer\n> ", toX, toY);
+				scanf("%i", &transmutation);
+				if (transmutation < 0 || transmutation > 4)
+				{
+					transmutation = 0;
+				}
+				else
+				{
+					break;
+				}
+				printf("\nBitte gebe eine korrekte Zahl ein!\n");
+
+			}
+			const char* figure = board[toY][toX];
+			char figureTeam = figure[0];
+			transmutate(toX, toY, board, transmutation, figureTeam);
 
 		}
 		else

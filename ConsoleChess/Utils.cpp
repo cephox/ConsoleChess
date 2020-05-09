@@ -57,6 +57,56 @@ char currentPlayerShort(const char player[])
 	return player[0];
 }
 
+void transmutate(int x, int y, const char* board[8][8], int choice, char figureTeam)
+{
+
+	if (choice == 1)
+	{
+		if (figureTeam == 's')
+		{
+			board[y][x] = "sD";
+		}
+		else
+		{
+			board[y][x] = "wD";
+		}
+	}
+	else if (choice == 2)
+	{
+		if (figureTeam == 's')
+		{
+			board[y][x] = "sT";
+		}
+		else
+		{
+			board[y][x] = "wT";
+		}
+	}
+	else if (choice == 3)
+	{
+		if (figureTeam == 's')
+		{
+			board[y][x] = "sS";
+		}
+		else
+		{
+			board[y][x] = "wS";
+		}
+	}
+	else if (choice == 4)
+	{
+		if (figureTeam == 's')
+		{
+			board[y][x] = "sL";
+		}
+		else
+		{
+			board[y][x] = "wL";
+		}
+	}
+
+}
+
 void getFigurType(int x, int y, const char* board[8][8], char result[])
 {
 
@@ -137,7 +187,8 @@ int move(int x, int y, int toX, int toY, const char* board[8][8])
 		{
 			if (toY == 0)
 			{
-				board[toY][toX] = "wD";
+				return 3;
+				//board[toY][toX] = "wD";
 			}
 		}
 
@@ -145,7 +196,8 @@ int move(int x, int y, int toX, int toY, const char* board[8][8])
 		{
 			if (toY == 7)
 			{
-				board[toY][toX] = "sD";
+				return 3;
+				//board[toY][toX] = "sD";
 			}
 		}
 	}

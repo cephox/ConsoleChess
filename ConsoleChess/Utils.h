@@ -14,6 +14,8 @@ void abs(int* number);
 void printBoard(const char* board[8][8], const char currentPlayer[]);
 char currentPlayerShort(const char player[]);
 
+void transmutate(int x, int y, const char* board[8][8], int choice, char figureTeam);
+
 void getFigurType(int x, int y, const char* board[8][8], char result[]);
 int move(int x, int y, int toX, int toY, const char* board[8][8]);
 bool canMove(int x, int y, int toX, int toY, const char* board[8][8]);
