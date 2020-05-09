@@ -179,6 +179,7 @@ OUTER:
 
 			while (transmutation == 0)
 			{
+				printBoard(board, currentPlayer);
 				printf("\nDu kannst deinen Bauern auf (%i, %i) verwandeln.\nIn was soll der Bauer verwandelt werden?\n[1] Dame\n[2] Turm\n[3] Springer\n[4] Laeufer\n> ", toX, toY);
 				scanf("%i", &transmutation);
 				if (transmutation < 0 || transmutation > 4)
